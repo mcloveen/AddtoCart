@@ -4,6 +4,9 @@ let cartItems = [];
 // Local Storage Cart-update
 if (localStorage.getItem('cartItems')) {
   cartItems = JSON.parse(localStorage.getItem('cartItems'));
+
+  let cartCount = document.querySelector('.cartCount')
+  cartCount.innerHTML = cartItems.length
 }
 
 // Add to cart button
@@ -114,6 +117,8 @@ window.addEventListener('load', function() {
   if (cartItems.length > 0) {
     updateCartContent();
   }
+  let cartCount = document.querySelector('.cartCount')
+  cartCount.innerHTML = cartItems.length
 });
 
 // Remove products Cart
